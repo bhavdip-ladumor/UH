@@ -1,0 +1,185 @@
+/* Navigation Container - Horizontally Scrollable */
+.profile-shortcut-nav-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+  -ms-overflow-style: none; /* IE/Edge: hide scrollbar */
+}
+
+.profile-shortcut-nav-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera: hide scrollbar */
+}
+
+/* Wrapper - Flexbox for single-line alignment */
+.profile-shortcut-nav-wrapper {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  white-space: nowrap;
+}
+
+/* Navigation Buttons - Consistent with your existing design */
+.shortcut-nav-btn {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #e0e0e0; /* Matches your hero section border */
+  border-radius: 6px; /* Slightly rounded, matching your input fields */
+  text-decoration: none;
+  color: #616161; /* Consistent text color */
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.shortcut-nav-btn:hover {
+  background-color: #f9f9f9;
+  border-color: #f5b041; /* Uses your primary accent color */
+  color: #f5b041;
+}
+
+.shortcut-nav-btn.active {
+  background-color: #f5b041;
+  border-color: #f5b041;
+  color: white;
+}
+
+/* Responsive adjustment for Mobile/Tablet */
+@media (max-width: 600px) {
+  .shortcut-nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+/* Hero Section Container */
+#hero-section.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+/* Vertical Hero Layout */
+.profile-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Avatar Container - Circular */
+.profile-avatar-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f5b041; /* Accent color matching your edit button */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Image scaling */
+.profile-main-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image isn't distorted */
+}
+
+/* Name Styling */
+.profile-hero-name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Section Container */
+.profile-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Header & Button */
+.partition-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.btn-edit {
+  padding: 0.5rem 1rem;
+  background-color: #f5b041;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Form Layout */
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 0.4rem; color: #616161; font-size: 0.9rem; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* Edit & Disabled State Styles */
+.edit-locked input:disabled, 
+.edit-locked select:disabled {
+  background-color: #f9f9f9;
+  color: #888;
+  border: 1px solid #eee;
+  cursor: not-allowed;
+}
+
+/* Active Editing State */
+.is-editing .edit-locked input, 
+.is-editing .edit-locked select {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #f5b041;
+  cursor: text;
+}
+
+/* Responsive Grid (Mobile/Tablet) */
+@media (max-width: 767px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns for address inputs */
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Specific adjustment for the 3-column pincode/state/country row */
+.form-row:last-of-type {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+}

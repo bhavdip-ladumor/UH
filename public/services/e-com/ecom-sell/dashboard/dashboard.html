@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UttamHub Seller Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside id="sidebar">
+    <div class="sidebar-top">
+        <div class="sidebar-header">
+            <button id="sidebar-close" class="close-btn">×</button>
+            <h2 class="brand-name">UH E-com</h2>
+            <div id="account-name" class="user-name">Loading...</div>
+        </div>
+        
+        <hr class="divider">
+
+        <nav class="nav-links">
+            <a href="#" class="nav-item"><i>🏠</i> Home</a>
+            <a href="#" class="nav-item"><i>📦</i> Orders</a>
+            <a href="#" class="nav-item"><i>↩️</i> Return</a>
+            <a href="#" class="nav-item"><i>💰</i> Pricing</a>
+            <a href="#" class="nav-item"><i>⚠️</i> Claims</a>
+            <a href="#" class="nav-item"><i>📊</i> Inventory</a>
+            <a href="../add-product/add-product.html" class="nav-item"><i>➕</i> Add Product</a>
+            <a href="#" class="nav-item"><i>💳</i> Payment</a>
+        </nav>
+    </div>
+
+    <button class="logout-btn"><i>🚪</i> Logout</button>
+</aside>
+
+    <main id="main-content">
+        <header>
+            <div class="header-left">
+                <button id="sidebar-toggle">☰</button>
+                <div class="logo-box">
+                    <div class="logo-main">UH E-com</div>
+                    <div class="logo-sub">Seller Hub</div>
+                </div>
+            </div>
+            <div id="account-name" class="user-name">Loading...</div>
+        </header>
+
+        <div class="link-container">
+            <a href="https://uttamhub.com">Go to Uttamhub</a>
+        </div>
+
+        <section class="kpi-grid">
+            <div class="card">New/Pending<br><b>12</b></div>
+            <div class="card">Out of Stock<br><b>3</b></div>
+            <div class="card">Low Stock<br><b>8</b></div>
+            <div class="card">Scan QR<br><b>📷</b></div>
+        </section>
+    </main>
+
+    <nav id="bottom-nav">
+        <button class="nav-btn">🏠 Home</button>
+        <button class="nav-btn">📦 Order</button>
+        <button class="nav-btn">➕ Add</button>
+        <button class="nav-btn">📊 Inventory</button>
+        <button class="nav-btn">🏭 Manu</button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

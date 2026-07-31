@@ -1,0 +1,45 @@
+/* --- Reset & Base --- */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: sans-serif; display: flex; height: 100vh; }
+
+/* --- Sidebar (PC Default) --- */
+#sidebar {
+    width: 250px;
+    background: #1a1a1a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.sidebar-top { font-weight: bold; margin-bottom: 20px; }
+.sidebar-bottom { margin-top: auto; border-top: 1px solid #444; padding-top: 10px; }
+#sidebar nav div { padding: 10px 0; cursor: pointer; }
+#sidebar nav div:hover { color: #ddd; }
+
+/* --- Main Content --- */
+main { flex: 1; display: flex; flex-direction: column; overflow-y: auto; background: #f4f4f4; }
+header { background: #fff; padding: 15px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ddd; }
+.content { padding: 20px; }
+
+/* --- Card Grid (2x2) --- */
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+.card { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+/* --- Mobile Specifics --- */
+.bottom-nav { display: none; } /* Hidden on Desktop */
+#menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+
+@media (max-width: 768px) {
+    #sidebar { position: fixed; left: -250px; z-index: 100; height: 100%; }
+    #sidebar.active { left: 0; }
+    
+    #menu-toggle { display: block; } /* Show Hamburger */
+    
+    .bottom-nav {
+        display: flex; position: fixed; bottom: 0; width: 100%;
+        background: white; padding: 10px; justify-content: space-around;
+        border-top: 1px solid #ddd; z-index: 50;
+    }
+}

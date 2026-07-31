@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Uttam Hub | E-com Login</title>
+</head>
+<body>
+    <header class="login-header">
+        <h1>UH E-com</h1>
+    </header>
+    
+    
+
+<main class="login-wrapper">
+    <!-- Login container -->
+    <div class="login-container">
+        <h2>Seller Login</h2>
+        <input type="email" id="email" placeholder="Email Address" autocomplete="email" onkeydown="handleEnter(event, 'password')">
+        
+        <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Password" autocomplete="current-password" onkeydown="handleEnter(event, 'login')">
+            <button type="button" id="toggle-password" onclick="togglePassword()">👁️</button>
+        </div>
+        
+        <button onclick="handleLogin()">Sign In</button>
+    </div>
+
+    <!-- Go Back Button (Now below login container) -->
+    <div class="go-back-wrapper">
+        <button class="back-btn" onclick="goBack()">← Go Back</button>
+    </div>
+
+    <!-- Error box -->
+    <div id="error-box" class="error-hidden">
+        <p id="error-message"></p>
+        <button onclick="closeError()">OK</button>
+    </div>
+</main>
+
+    <script src="login.js"></script>
+</body>
+</html>

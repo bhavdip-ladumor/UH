@@ -1,0 +1,175 @@
+/* --- Reset and Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header Section --- */
+.login-header {
+    background: #000;
+    color: #fff;
+    padding: 1.5rem 2rem;
+}
+
+.login-header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* --- Centering Wrapper --- */
+.login-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stacks container and error box */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* --- Login Container --- */
+.login-container {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* --- Form Elements --- */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: 2px solid #000;
+    border-color: transparent;
+}
+
+/* --- Password Wrapper --- */
+.password-wrapper {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+#toggle-password {
+    width: 50px;
+    background: #e0e0e0;
+    border: 1px solid #ddd;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+#toggle-password:hover {
+    background: #d0d0d0;
+}
+
+/* --- Sign In Button --- */
+button[onclick="handleLogin()"] {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button[onclick="handleLogin()"]:hover {
+    background: #333;
+}
+
+.go-back-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px; /* Space between the login box and this button */
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+}
+
+.back-btn {
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #d0d0d0;
+}
+/* --- Error Box --- */
+.error-hidden {
+    display: none;
+}
+
+.error-visible {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; /* Space from the login box */
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    gap: 15px;
+}
+
+.error-visible button {
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 480px) {
+    .login-header {
+        padding: 1rem;
+    }
+    
+    .login-container, .error-visible {
+        padding: 1.5rem;
+    }
+}

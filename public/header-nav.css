@@ -1,0 +1,612 @@
+/* ==========================================================================
+   1. CORE SETUP & DESIGN SYSTEM (PREMIUM LIGHT SYSTEM)
+   ========================================================================== */
+:root {
+  --bg-primary: #f9f9fb;   /* Near-white off-canvas luxury background */
+  --bg-surface: #ffffff;   /* Pure crisp white for dominant content surfaces */
+  --bg-dropdown: #ffffff;  /* Elevated layout white surface dropdown card */
+  --text-main: #141416;     /* Deep sleek obsidian black for premium readability */
+  --text-muted: #6e717c;    /* Sophisticated muted slate gray for labels */
+  --accent-color: #2563eb;  /* High-end royal cobalt sapphire accent */
+  --danger-color: #dc2626;  /* Crimson alert status configuration color */
+  --border-color: #e6e8ec;  /* Ultra-fine hairline subtle light border division */
+  
+  /* Adaptive Base Sizing for Scaling (Mobile up to TV) */
+  --base-padding: 1rem;
+  --font-logo: 1.5rem;
+  --font-body: 1rem;
+  --avatar-size: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities */
+.hidden {
+  display: none !important;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVIGATION LAYOUT
+   ========================================================================== */
+.main-header {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 var(--base-padding);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02); /* Soft high-end minimal glow shadow */
+}
+
+.header-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: var(--font-logo);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #141416 0%, #4b526d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   3. AUTH BUTTON & PROFILE CARD
+   ========================================================================== */
+.auth-section {
+  position: relative;
+}
+
+/* Button UI */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.4rem;
+  font-size: calc(var(--font-body) * 0.9);
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary {
+  background-color: var(--text-main);
+  color: var(--bg-surface);
+}
+
+.btn-primary:hover {
+  background-color: #2d2d30;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Profile Trigger Card */
+.profile-card-wrapper {
+  position: relative;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 14px 5px 6px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-card:hover {
+  border-color: #b1b5c3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--bg-primary);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.user-greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-name {
+  font-size: calc(var(--font-body) * 0.88);
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   4. DROPDOWN OPTIONS PANEL
+   ========================================================================== */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 12px);
+  background-color: var(--bg-dropdown);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 230px;
+  list-style: none;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); /* Sophisticated smooth shadow depth */
+  animation: dropdownReveal 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dropdownReveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 12px 18px;
+  font-size: calc(var(--font-body) * 0.9);
+  color: var(--text-main);
+  text-decoration: none;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--bg-primary);
+  color: var(--accent-color);
+  padding-left: 22px; /* Premium micro-indent effect on navigation */
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 6px 0;
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+.text-danger:hover {
+  background-color: rgba(220, 38, 38, 0.04) !important;
+  color: var(--danger-color) !important;
+}
+
+/* ==========================================================================
+   5. RESPONSIVE BREAKPOINTS (Mobile, Tablet, Desktop, TV)
+   ========================================================================== */
+
+/* --- TABLET VIEW --- */
+@media (min-width: 768px) {
+  :root {
+    --base-padding: 2rem;
+    --font-logo: 1.75rem;
+    --font-body: 1.05rem;
+  }
+}
+
+/* --- DESKTOP VIEW --- */
+@media (min-width: 1024px) {
+  :root {
+    --base-padding: 3rem;
+    --font-logo: 2rem;
+    --font-body: 1.1rem;
+  }
+}
+
+/* --- TV VIEW (Ultra-wide Large Scale Display Display Adaptation) --- */
+@media (min-width: 1921px) {
+  :root {
+    --base-padding: 4rem;
+    --font-logo: 3rem;
+    --font-body: 1.6rem;
+    --avatar-size: 60px;
+  }
+  .header-container {
+    height: 110px;
+  }
+  .dropdown-menu {
+    width: 340px;
+    border-radius: 18px;
+  }
+  .dropdown-item {
+    padding: 18px 24px;
+  }
+  .profile-card {
+    padding: 10px 24px 10px 10px;
+  }
+  .btn {
+    padding: 1.2rem 2.4rem;
+    border-radius: 12px;
+  }
+}
+
+/* ==========================================================================
+   6. RESPONSIVE NAVIGATION STRIP
+   ========================================================================== */
+.nav-strip {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.6rem var(--base-padding);
+}
+
+.nav-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.nav-left-group {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+
+.nav-icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.nav-icon-btn:hover {
+  background-color: var(--bg-primary);
+}
+
+/* Utilities Group */
+.nav-utility-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  order: 2;
+}
+
+.nav-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+.nav-icon-link {
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.nav-icon-link:hover {
+  color: var(--accent-color);
+  background-color: var(--bg-primary);
+}
+
+/* Search block settings */
+.nav-search-block {
+  width: 100%;
+  order: 3;
+}
+
+.search-wrapper {
+  display: flex;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.search-wrapper:focus-within {
+  border-color: var(--accent-color);
+  background-color: var(--bg-surface);
+  box-shadow: 0 0 0 3px rgba(37, 99, 241, 0.08);
+}
+
+.search-input {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px 14px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #9ca3af;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 0 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.search-btn:hover {
+  color: var(--accent-color);
+}
+
+/* ==========================================================================
+   7. STRIP RESPONSIVE OVERRIDES (TABLET, DESKTOP, TV)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .nav-strip {
+    padding: 0.75rem var(--base-padding);
+  }
+
+  .nav-container {
+    flex-wrap: nowrap;
+  }
+
+  .nav-left-group { order: 1; }
+  
+  .nav-search-block {
+    order: 2;
+    width: auto;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 2rem;
+  }
+
+  .nav-utility-group {
+    order: 3;
+    gap: 25px;
+  }
+}
+
+/* --- TV VIEW OVERRIDES --- */
+@media (min-width: 1921px) {
+  .nav-search-block {
+    max-width: 900px;
+    margin: 0 4rem;
+  }
+  .search-wrapper {
+    border-radius: 12px;
+  }
+  .search-input {
+    padding: 16px 24px;
+    font-size: 1.3rem;
+  }
+  .nav-link {
+    font-size: 1.3rem;
+  }
+  .nav-icon-btn svg { width: 36px; height: 36px; }
+  .nav-icon-link svg { width: 32px; height: 32px; }
+}
+
+/* ==========================================================================
+   8. SLIDING SIDEBAR & BACKDROP STYLING
+   ========================================================================== */
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(20, 20, 22, 0.3); /* Softer backdrop tint */
+  backdrop-filter: blur(8px);               /* Advanced glass luxury frosting */
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-backdrop.active {
+  display: block !important;
+  opacity: 1;
+}
+
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 290px;
+  height: 100vh;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-menu.active {
+  transform: translateX(0);
+}
+
+/* Sidebar Elements */
+.sidebar-header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--base-padding);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-brand {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--text-main);
+}
+
+.sidebar-close-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.sidebar-close-btn:hover {
+  color: var(--text-main);
+  background-color: var(--bg-primary);
+}
+
+.sidebar-nav {
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 12px var(--base-padding);
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: calc(var(--font-body) * 0.95);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: var(--bg-primary);
+  color: var(--accent-color);
+  padding-left: calc(var(--base-padding) + 6px);
+}
+
+.sidebar-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 12px 0;
+}
+
+/* --- TV VIEW OVERRIDES --- */
+@media (min-width: 1921px) {
+  .sidebar-menu { width: 420px; }
+  .sidebar-header { height: 110px; }
+  .sidebar-brand { font-size: 2rem; }
+  .sidebar-close-btn svg { width: 32px; height: 32px; }
+  .sidebar-link { padding: 18px var(--base-padding); }
+}
+
+/* ==========================================================================
+   9. SIDEBAR PROFILE OVERHAUL
+   ========================================================================== */
+.sidebar-profile-box {
+  background: linear-gradient(180deg, rgba(249,249,251,0.5) 0%, rgba(255,255,255,0) 100%);
+  padding: 2rem var(--base-padding) 1.5rem var(--base-padding);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-avatar-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-large-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-greeting {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.sidebar-profile-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 2px;
+  word-break: break-word;
+}
+
+/* --- TV VIEW OVERRIDES --- */
+@media (min-width: 1921px) {
+  .sidebar-profile-box {
+    padding: 3rem var(--base-padding) 2rem var(--base-padding);
+    gap: 18px;
+  }
+  .sidebar-avatar-wrapper { width: 100px; height: 100px; }
+  .sidebar-profile-name { font-size: 1.6rem; }
+}

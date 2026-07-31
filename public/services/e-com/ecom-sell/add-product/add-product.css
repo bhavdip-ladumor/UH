@@ -1,0 +1,12 @@
+#category-list { display: flex; flex-direction: column; gap: 10px; padding: 20px; }
+#category-list button { 
+    padding: 15px; 
+    background: #fff; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    text-align: left;
+}
+#category-list button:hover { background: #f0f0f0; }
+
+#product-form { padding: 20px; background: white; border-radius: 8px; }

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bhavdip's Workshop - Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans pb-24">
+
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-50 px-4 py-3 flex justify-between items-center shadow-xs">
+    <div class="flex items-center space-x-2">
+      <span class="material-icons text-indigo-600 text-2xl">storefront</span>
+      <h1 class="text-lg font-bold tracking-tight">Bhavdip's Workshop</h1>
+    </div>
+    <div class="flex items-center space-x-1 bg-gray-100 px-3 py-1 rounded-full">
+      <span class="material-icons text-gray-600 text-sm">person</span>
+      <span class="text-xs font-medium text-gray-700">Admin</span>
+    </div>
+  </header>
+
+  <main class="max-w-md mx-auto px-4 pt-4 space-y-6">
+
+    <section class="grid grid-cols-3 gap-2">
+      <div class="bg-blue-50 border border-blue-100 rounded-2xl p-3 text-center">
+        <span class="text-xs font-semibold text-blue-600 block mb-0.5">Orders</span>
+        <span class="text-lg font-bold text-blue-900">12 New</span>
+      </div>
+      <div class="bg-amber-50 border border-amber-100 rounded-2xl p-3 text-center">
+        <span class="text-xs font-semibold text-amber-600 block mb-0.5">Low Stock</span>
+        <span class="text-lg font-bold text-amber-900">4 Alerts</span>
+      </div>
+      <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-3 text-center">
+        <span class="text-xs font-semibold text-emerald-600 block mb-0.5">Today</span>
+        <span class="text-lg font-bold text-emerald-900">₹5,400</span>
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 px-1">Daily Operations</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <a href="#processing" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-blue-100 text-blue-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">inventory_2</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">Processing Queue</span>
+          <span class="text-xs text-gray-500 mt-1">Pack & prepare orders</span>
+        </a>
+        <a href="#dispatched" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-blue-100 text-blue-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">local_shipping</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">Dispatched & RTO</span>
+          <span class="text-xs text-gray-500 mt-1">Track transit & returns</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 px-1">Stock & Catalog</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <a href="#catalog" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-emerald-100 text-emerald-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">folder</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">Master Catalog</span>
+          <span class="text-xs text-gray-500 mt-1">Manage all listings</span>
+        </a>
+        <a href="#skus" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-emerald-100 text-emerald-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">layers</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">SKU Variations</span>
+          <span class="text-xs text-gray-500 mt-1">Sizes, materials, options</span>
+        </a>
+        <a href="#stock" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-emerald-100 text-emerald-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">sync</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">Live Stock Count</span>
+          <span class="text-xs text-gray-500 mt-1">Quick quantity updates</span>
+        </a>
+        <a href="#scanner" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-purple-100 text-purple-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">photo_camera</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">Camera Scanner</span>
+          <span class="text-xs text-gray-500 mt-1">Scan labels or products</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 px-1">Business Health</h2>
+      <div class="grid grid-cols-2 gap-3">
+        <a href="#sales" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-amber-100 text-amber-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">bar_chart</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">Sales & Revenue</span>
+          <span class="text-xs text-gray-500 mt-1">Payouts & platform fees</span>
+        </a>
+        <a href="#insights" class="bg-white border border-gray-200 rounded-2xl p-4 flex flex-col items-start active:scale-98 transition-transform shadow-xs">
+          <div class="bg-amber-100 text-amber-600 p-2.5 rounded-xl mb-3">
+            <span class="material-icons block">local_fire_department</span>
+          </div>
+          <span class="font-bold text-sm text-gray-900">Product Insights</span>
+          <span class="text-xs text-gray-500 mt-1">Best & worst sellers</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="bg-white border-t border-gray-200 fixed bottom-0 left-0 right-0 z-50 px-6 py-2 flex justify-between items-center shadow-lg max-w-md mx-auto">
+    <a href="#" class="flex flex-col items-center space-y-0.5 text-indigo-600">
+      <span class="material-icons text-xl">home</span>
+      <span class="text-[10px] font-bold">Home</span>
+    </a>
+    <a href="#stock" class="flex flex-col items-center space-y-0.5 text-gray-400 hover:text-gray-600">
+      <span class="material-icons text-xl">inventory</span>
+      <span class="text-[10px] font-medium">Stock</span>
+    </a>
+    <a href="#processing" class="flex flex-col items-center space-y-0.5 text-gray-400 hover:text-gray-600">
+      <span class="material-icons text-xl">shopping_bag</span>
+      <span class="text-[10px] font-medium">Orders</span>
+    </a>
+    <a href="#settings" class="flex flex-col items-center space-y-0.5 text-gray-400 hover:text-gray-600">
+      <span class="material-icons text-xl">settings</span>
+      <span class="text-[10px] font-medium">Setup</span>
+    </a>
+  </nav>
+
+</body>
+</html>
